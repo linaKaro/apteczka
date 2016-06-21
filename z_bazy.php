@@ -10,34 +10,33 @@
 	require_once "inc/naglowek.php";
 ?>
 
-<header>
-	<H1><?php echo $tytul ?></H1>
-	<H4><?php echo $podtytul ?></H4>
-</header>
-
 <?php require_once "inc/menu.php"; ?>
+<div class="jumbotron">
+	<h1><?php echo $tytul ?></h1>
+	<p><?php echo $podtytul ?></p>
+</div>
+
 <?php 
 	if (!isset($_GET['wybrano'])) {
 		header("Location: myindex.php?wybrano=0&zaloguj_sie=1");
-	} else
-		$opcja = ($_GET['wybrano']);
-		
-	echo $wybranoOpcje . $opcja . " " . $wybrane[$opcja] . "<br><br>";
+	}
 	
 ?>
 	
-<div id = "dodaj_do_bazy">
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">	
 <?php
 	echo "Dodaj nowy lek do bazy: <br><br>";
 ?>
-<form action="" method="POST">
-<?php echo "Nazwa leku: \t"; ?><input id="text" type="text" name="nazwa_leku" required><br>
-<?php echo "EAN: \t"; ?><input id="text" type="text" name="ean" value="" required><br>
-<?php echo "Ilość w opakowaniu: \t"; ?><input id="text" type="number" name="ilosc" required><br>
-<?php echo "Jednostka: \t"; ?><input id="text" type="text" name="jednostka" required><br>
-<?php echo "Substancja czynna: \t"; ?><input id="text" type="text" name="substancja" required><br><br>
-<input id="submit" type="submit" value="Dodaj"><br>
+<form role="form" action="" method="POST">
+<?php echo "Nazwa leku: \t"; ?><input id="text" type="text" class="form-control" name="nazwa_leku" required>
+<?php echo "EAN: \t"; ?><input id="text" type="text" class="form-control" name="ean" value="" required>
+<?php echo "Ilość w opakowaniu: \t"; ?><input id="text" type="number" class="form-control" name="ilosc" required>
+<?php echo "Jednostka: \t"; ?><input id="text" type="text" class="form-control" name="jednostka" required>
+<?php echo "Substancja czynna: \t"; ?><input id="text" type="text" class="form-control" name="substancja" required><br>
+<button id="submit" type="submit" value="Dodaj">Dodaj</button><br>
 </form>
+</div>
 </div>
 
 <?php

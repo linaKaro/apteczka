@@ -1,0 +1,51 @@
+body
+{
+    background-color: #BDCFDB;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: 'Verdana', sans-serif;
+
+}
+
+.jumbotron
+{
+    background-color: #92B8D4;
+    text-align: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.btn
+{
+    align-items:center;
+}
+
+p
+{
+    text-align: center;
+    font-size: medium;
+
+}
+
+h2
+{
+    text-align: center;
+}
+
+.img-circle
+{
+    align-items: center;
+    text-align: center;
+}
+
+.footer
+{
+    text-align: center;
+
+}
+
+.table
+{
+    font-size: small;
+}

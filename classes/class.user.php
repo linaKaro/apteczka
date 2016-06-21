@@ -25,20 +25,24 @@ class User {
 	}
 	
 	public function add_user($db_index, $username, $independent, $password=Null) {
-		$query = "SELECT * FROM uzytkownicy WHERE nazwa_uzytkownika = '$username' AND id_apteczki = '$db_index'";
-		$check = $this->db->query($query);
-		$rows = $check->num_rows;
-		
-		if ($rows>0) {
+		if($db_index==Null) {
 			return false;
 		} else {
-			if ($password != Null) {
-				$password=md5($password);
+			$query = "SELECT * FROM uzytkownicy WHERE nazwa_uzytkownika = '$username' AND id_apteczki = '$db_index'";
+			$check = $this->db->query($query);
+			$rows = $check->num_rows;
+			
+			if ($rows>0) {
+				return false;
+			} else {
+				if ($password != Null) {
+					$password=md5($password);
+				}
+				$query = "INSERT INTO uzytkownicy SET nazwa_uzytkownika='$username',
+				haslo='$password', samodzielny='$independent', id_apteczki='$db_index'";
+				$result = $this->db->query($query);
+				return true;
 			}
-			$query = "INSERT INTO uzytkownicy SET nazwa_uzytkownika='$username',
-			haslo='$password', samodzielny='$independent', id_apteczki='$db_index'";
-			$result = $this->db->query($query);
-			return true;			
 		}
 	}
 	

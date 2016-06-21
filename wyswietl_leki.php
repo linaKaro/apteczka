@@ -10,19 +10,16 @@
 	require_once "inc/naglowek.php";
 ?>
 
-<header>
-	<H1><?php echo $tytul ?></H1>
-	<H4><?php echo $podtytul ?></H4>
-</header>
-
 <?php require_once "inc/menu.php"; ?>
+<div class="jumbotron">
+	<h1><?php echo $tytul ?></h1>
+	<p><?php echo $podtytul ?></p>
+</div>
+
 <?php 
 	if (!isset($_GET['wybrano'])) {
 		header("Location: myindex.php?wybrano=0&zaloguj_sie=1");
-	} else
-		$opcja = ($_GET['wybrano']);
-		
-	echo $wybranoOpcje . $opcja . " " . $wybrane[$opcja] . "<br><br>";
+	}
 	
 	
 	$query = "select * from leki_specyfikacja";
@@ -31,9 +28,9 @@
 	
 	echo "<br><br>REKORDY W BAZIE<br><br>";
 ?>
-<table id="tabela">
-<tr id="tabela">
-<td id="tabela">
+<table>
+<tr>
+<td>
 	<?php echo "ID leku"; ?> </td>
 	<td id="tabela">
 	<?php echo "Nazwa";?> </td>

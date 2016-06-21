@@ -1,8 +1,8 @@
 <?php
 
 	$aplikacja = "Domowa Apteczka";
-	$tytul = "Apteczka";
-	$podtytul = "projekt semestralny z przedmiotu SIwM";
+	$tytul = "Witaj na DomowaApteczka.pl!";
+	$podtytul = "To miejsce pomoże Ci uporządkować Twoje leki";
 	
 	$stopka = "DomowaApteczka.pl by: karjed@student.agh.edu.pl";
 	
