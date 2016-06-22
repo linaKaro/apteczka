@@ -22,7 +22,7 @@
 	}
 	
 	
-	$query = "select * from leki_specyfikacja";
+	$query = "select * from leki";
 	
 	$wynik = $baza->query($query);
 	
@@ -49,17 +49,17 @@
 ?>
 <tr id="tabela">
 <td id="tabela">
-	<?php echo $row["id_leki_specyfikacja"] . "\t"; ?> </td>
+	<?php echo $row["id"] . "\t"; ?> </td>
 	<td id="tabela">
-	<?php echo $row["nazwa"] . "\t";?> </td>
+	<?php echo $row["nazwa_leku"] . "\t";?> </td>
 	<td id="tabela">
-	<?php echo $row["ean"] . "\t";?> </td>
+	<?php echo $row["EAN"] . "\t";?> </td>
 	<td id="tabela">
-	<?php echo $row["ilosc_w_opakowaniu"] . "\t";?> </td>
+	<?php echo $row["ilosc"] . "\t";?> </td>
 	<td id="tabela">
 	<?php echo $row["jednostka"] . "\t";?> </td>
 	<td id="tabela">
-	<?php echo $row["subst_czynna"]. "<br>";?> </td>
+	<?php echo $row["substancja_czynna"]. "<br>";?> </td>
 	</tr>
 <?php
 }

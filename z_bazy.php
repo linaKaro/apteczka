@@ -47,22 +47,12 @@ $ilosc=$_POST['ilosc'];
 $jednostka=$_POST['jednostka'];
 $substancja_czynna=$_POST['substancja'];
 
-$query = "INSERT INTO leki_specyfikacja(nazwa, ean, ilosc_w_opakowaniu, jednostka, subst_czynna) VALUES('$nazwa_leku', '$ean', '$ilosc', '$jednostka', '$substancja_czynna')";
-$query1 = "select * from leki_specyfikacja";
+$query = "INSERT INTO leki(nazwa_leku, EAN, ilosc, jednostka, substancja_czynna) VALUES('$nazwa_leku', '$ean', '$ilosc', '$jednostka', '$substancja_czynna')";
+$query1 = "select * from leki";
 if ($_POST['nazwa_leku'] && $_POST['ean'] && $_POST['ilosc'] && $_POST['jednostka'] && $_POST['substancja']) {
 	$baza->query($query);
 }
-	$wynik=$baza->query($query1);
-	
-	echo "<br><br>REKORDY W BAZIE<br><br>";
-	while ($row = $wynik->fetch_assoc()) {
-	echo $row["id_leki_specyfikacja"] . "\t";
-	echo $row["nazwa"] . "\t";
-	echo $row["ean"] . "\t";
-	echo $row["ilosc_w_opakowaniu"] . "\t";
-	echo $row["jednostka"] . "\t";
-	echo $row["subst_czynna"]. "<br>";
-}
+
 
 
 

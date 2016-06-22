@@ -43,8 +43,8 @@
 $nazwa_leku=$_POST['nazwa_leku'];
 $ean=$_POST['ean'];
 
-$query = "DELETE FROM leki_specyfikacja WHERE nazwa='$nazwa_leku' OR ean='$ean'";
-$query1 = "select * from leki_specyfikacja";
+$query = "DELETE FROM leki WHERE nazwa_leku='$nazwa_leku' OR EAN='$ean'";
+$query1 = "select * from leki";
 if ($_POST['nazwa_leku'] || $_POST['ean']) {
 	$baza->query($query);
 }
@@ -74,17 +74,17 @@ $wynik=$baza->query($query1);
 ?>
 <tr id="tabela">
 <td id="tabela">
-	<?php echo $row["id_leki_specyfikacja"] . "\t"; ?> </td>
+	<?php echo $row["id"] . "\t"; ?> </td>
 	<td id="tabela">
-	<?php echo $row["nazwa"] . "\t";?> </td>
+	<?php echo $row["nazwa_leku"] . "\t";?> </td>
 	<td id="tabela">
-	<?php echo $row["ean"] . "\t";?> </td>
+	<?php echo $row["EAN"] . "\t";?> </td>
 	<td id="tabela">
-	<?php echo $row["ilosc_w_opakowaniu"] . "\t";?> </td>
+	<?php echo $row["ilosc"] . "\t";?> </td>
 	<td id="tabela">
 	<?php echo $row["jednostka"] . "\t";?> </td>
 	<td id="tabela">
-	<?php echo $row["subst_czynna"]. "<br>";?> </td>
+	<?php echo $row["substancja_czynna"]. "<br>";?> </td>
 	</tr>
 <?php
 }

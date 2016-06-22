@@ -13,40 +13,41 @@
 	$user = new User($baza);
 	
 	if($_GET['wyloguj']==1)
-		session_destroy();
+		$user->logout();
 	
 	if(isset($_POST['email']) && isset($_POST['haslo']) && isset($_POST['username']))
-		if($user->check_login($_POST['email'], $_POST['username'], $_POST['haslo']))
-			$zalogowano=true;
-		else $byl_blad_logowania = 2;
+		$status = $user->check_login($_POST['email'], $_POST['username'], $_POST['haslo']);
 	else
-		session_destroy();	
+		$user->logout();	
 
-?>
-
-
-<?php require_once "inc/menu.php"; ?>
-
-<?php 
+		
 	if (!isset($_GET['wybrano'])) {
 		header("Location: myindex.php?wybrano=0&zaloguj_sie=1");
-	} else
-		$opcja = ($_GET['wybrano']);
-		
-	echo '<p id="blad">';
-			if (isset($byl_blad_logowania) && $byl_blad_logowania == 2)
-				echo $blad_logowania;
-	echo '</p>';
-	if(!$_SESSION['login']) {
-?>
-	
+	}?>
+
+<div class="container theme-showcase" role="main">	
 <div class="jumbotron">
 	<h1><?php echo $tytul ?></h1>
 	<p><?php echo $podtytul ?></p>
 </div>
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">	
+  <div class="col-md-6 col-md-offset-3">
+
+<?php
+		
+	if(isset($status) && !$status) { ?>
+	<p><?php echo $login_error; ?></p>
+	<?php }
+	if($_GET['wyloguj']==1) {
+		echo $logoutSuccessful;
+		unset($_GET['wyloguj']);
+	}
+	if ($status==true) {
+		header("Location: main.php?wybrano=0");
+	}
+	else {
+?>	
 	<form role="form" action = "" method="POST">
 		<h3>Masz już swoją apteczkę? Zaloguj się!</h3>
 		<?php echo $lbEmail ?> <br> <input type = "email" class="form-control" name="email" placeholder=" <?php echo $logEmailpch?>" required>
@@ -59,8 +60,7 @@
   </div>
 </div>
 <?php
-	} else echo "<br>Witaj ". $_SESSION['username'] . "!";
-?>
-<?php 
-require_once 'inc/stopka.php';
+
+	require_once 'inc/stopka.php';
+	}
 ?>

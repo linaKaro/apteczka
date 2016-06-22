@@ -11,7 +11,7 @@ require_once "inc/naglowek.php";
 $user = new User($baza);
 ?>
 
-<?php require_once "inc/menu.php"; ?>
+<div class="container theme-showcase" role="main">
 <div class="jumbotron">
 	<h1><?php echo $tytul ?></h1>
 	<p><?php echo $podtytul ?></p>
@@ -23,11 +23,14 @@ if(isset($_POST['email']) && isset($_POST['haslo']) && isset($_POST['username'])
 	$independent = 1;
 	$added=$user->add_user($database_id, $_POST['username'], $independent, $_POST['haslo']);
 	if($added) {
-		?> <h3> <?php 
-		echo "Udało się utworzyć konto :) Przejdź do logowania."; ?> </h3> <?php 
-	} else {?> <h3> <?php
-		echo "Konto nie zostało utworzone. <br>"; ?><a href="register.php?wybrano=6"><?php echo "SPRÓBUJ PONOWNIE"; ?></a>
-		</h3>
+		?> <h4> <?php 
+		echo "Udało się utworzyć konto :) Możesz przejść do logowania."; ?></h4><br>
+		<a class="btn btn-primary" href="myindex.php?wybrano=0" role="button">Powrót do logowania</a>
+		<?php 
+	} else {?> <h4> <?php
+		echo $registration_error; ?>
+		</h4><br>
+		<a class="btn btn-primary" href="register.php?wybrano=6" role="button">Spróbuj ponownie</a>
 		<?php
 			
 	}
@@ -43,8 +46,10 @@ if(isset($_POST['email']) && isset($_POST['haslo']) && isset($_POST['username'])
 		<?php echo $lbEmail ?> <br> <input type = "email" class="form-control" name="email" placeholder=" <?php echo $logEmailpch?>" required>
 		<?php echo $lbUsername ?> <br> <input type = "text" class="form-control" name="username" placeholder = " <?php echo $logUsernamepch?>" required>
 		<?php echo $lbHaslo ?> <br> <input type = "password" class="form-control" name="haslo" placeholder=" <?php echo $logHaslopch?>" required><br>
-		<button id="submit" type="submit" value="OK" class="btn btn-default">Zarejestruj</button> <br>
+		<button id="submit" type="submit" value="OK" class="btn btn-default">Zarejestruj</button>
 	</form>
+	<br>
+	<a class="btn btn-primary" href="myindex.php?wybrano=0" role="button">Powrót do logowania</a>
 	<br>
   </div>
 </div>
