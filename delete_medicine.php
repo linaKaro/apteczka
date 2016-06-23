@@ -27,23 +27,23 @@ if(isset($_POST['opakowanie_id'])) {
 
 ?>
 
-<div class="page-header">Wyszukaj lek w bazie</div>
+<div class="page-header"><?php echo $searchBase; ?></div>
 <form action="" method="post">
     <div class="row">
         <div class="col-md-4">
-            <label for="search_by">Wyszukaj po:</label>
+            <label for="search_by"><?php echo $searchBy; ?></label>
             <select class="form-control" id="search_by" name="search_by">
-                <option value="activity">nazwa</option>
-                <option value="patient_id">EAN</option>
+                <option value="activity"><?php echo $nameTxt; ?></option>
+                <option value="patient_id"><?php echo $eanTxt; ?></option>
             </select>
         </div>
         <div class="col-md-4">
-            <label for="enter_string">Wpisz wyszukiwaną frazę:</label>
+            <label for="enter_string"><?php echo $enterTxt; ?></label>
             <input class="form-control" type="text" id="enter_string" name="enter_string">
         </div>
         <div class="col-md-4">
             <br>
-            <button type="submit" class="btn btn-primary">Wyszukaj</button>
+            <button type="submit" class="btn btn-primary"><?php echo $searchTxt; ?></button>
         </div>
     </div>
 </form>

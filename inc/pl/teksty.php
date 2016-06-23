@@ -6,17 +6,30 @@
 	
 	$stopka = "DomowaApteczka.pl by: karjed@student.agh.edu.pl";
 	
-	$lgLogowanie = "Wprowadzanie danych do logowania";
+	$lgLogowanie = "Masz już swoją apteczkę? Zaloguj się!";
 	$lbUsername = "Nazwa użytkownika: ";
-	$lbEmail = "Email: ";
+	$lbEmail = "Nazwa apteczki: ";
 	$logUsernamepch = "Wprowadź nazwę użytkownika";
-	$logEmailpch = "Wprowadź swój email";
+	$logEmailpch = "Wprowadź nazwę apteczki (email)";
 	$lbHaslo = "Hasło: ";
 	$logHaslopch = "Wprowadź hasło";
-	$wybranoOpcje = "Wybrano opcję numer: ";
+	
 	$powitanie = "CZEŚĆ! Witamy na portalu DomowaApteczka.pl";
 	$loginSuccessful = "Zostałeś poprawnie zalogowany";
 	$logoutSuccessful = "Zostałeś poprawnie wylogowany z apteczki<br>";
+	
+	$register = "Jesteś tu po raz pierwszy?";
+	$registerLink = "ZAŁÓŻ SWOJĄ APTECZKĘ!";
+	
+	//register
+	$registerSuccessful = "Udało się utworzyć konto :) Możesz przejść do logowania.";
+	$backToLogin = "Powrót do logowania";
+	$tryAgain = "Spróbuj ponownie";
+	$yourData = "Podaj swoje dane aby móc korzystać z apteczki:";
+	$commitRegister = "Zarejestruj";
+	
+	//main
+	$welcome = "Witaj ";
 	
 	//menu
 	$menuStart = "Strona główna";
@@ -39,11 +52,40 @@
 	//users
 	$usersTitleAdd = "Dodawanie nowego użytkownika";
 	$usersTitleDelete = "Usuwanie użytkowników";
+	$addedTxt = "Dodano nowego użytkownika do bazy";
+	$somethingWrong = "Coś poszło nie tak! Użytkownik nie może być dodany.";
+	$enterPassword = "Musisz wprowadzić hasło jeśli użytkownik jest niezależny.";
+	$userList = "Lista użytkowników apteczki";
+	$independentTxt = "Samodzielny";
+	$newUserData = "Podaj dane nowego użytkownika:";
+	$yes = "Tak";
+	$no = "Nie";
+	$delete = "Usuń";
 	
 	//add_medicine
 	$addTitle1 = "Dodaj opakowanie: Krok 1";
 	$addTitle2 = "Dodaj opakowanie: Krok 2";
 	$addTitle3 = "Dodawanie zakończone";
+	$searchBase = "Wyszukaj lek w bazie";
+	$searchBy = "Wyszukaj po:";
+	$nameTxt = "nazwa";
+	$eanTxt = "EAN";
+	$enterTxt = "Wpisz wyszukiwaną frazę:";
+	$searchTxt = "Wyszukaj";
+	$medicineList = "Lista leków";
+	$quantityTxt = "ilość";
+	$unitTxt = "jednostka";
+	$activeSubst = "substancja aktywna";
+	$selectTxt = "Wybierz";
+	$noChoice = "brak wyboru";
+	$chosenMedicine = "Wybrany lek";
+	$otherData = "Wpisz pozostałe dane dotyczące zakupionego leku";
+	$medicineAdded = "Lek dodano do apteczki<br>";
+	$priceTxt = "Cena:";
+	$usageDate = "Data ważności:";
+	$packageNumber = "Ilość opakowań:";
+	$leftTxt = "Pozostało:";
+	$addBtn = "Dodaj";
 	
 	//delete_medicine
 	$deleteTitle = "Usuń opakowanie";

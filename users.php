@@ -24,11 +24,11 @@ if($_GET['wybrano']==1){?>
 		if(($_POST['haslo']!="" && $_POST['independent']==1)||($_POST['independent']==0)) {
 			$added=$user->add_user($_SESSION['mk_id'], $_POST['username'], $_POST['independent'], $_POST['haslo']);
 			if($added)
-				echo "Dodano nowego użytkownika do bazy";
+				echo $addedTxt;
 			else
-				echo "Coś poszło nie tak! Użytkownik nie może być dodany.";
+				echo $somethingWrong;
 		} else 
-			echo "Musisz wprowadzić hasło jeśli użytkownik jest niezależny.";
+			echo $enterPassword;
 	}
 
 	$mk_id=$_SESSION['mk_id'];
@@ -37,12 +37,12 @@ if($_GET['wybrano']==1){?>
 	?>
 
 	<div class="container">
-  	<h3>Lista użytkowników apteczki</h3>
+  	<h3><?php echo $userList; ?></h3>
   	<table class="table table-striped">
     	<thead>
       		<tr>
-        	<th>Nazwa użytkownika</th>
-        	<th>Samodzielny</th>
+        	<th><?php echo $lbUsername; ?></th>
+        	<th><?php echo $independentTxt; ?></th>
       		</tr>
     	</thead>
     <tbody>
@@ -55,7 +55,7 @@ if($_GET['wybrano']==1){?>
     </tbody>
     </table><br><br>
 	
-	<h3>Podaj dane nowego użytkownika:</h3>
+	<h3><?php echo $newUserData; ?></h3>
 	<form role="form" action = "" method="POST">
 	<div class="row">
   	<div class="col-md-4">
@@ -63,14 +63,14 @@ if($_GET['wybrano']==1){?>
 	</div>
 	<div class="col-md-2">
 			<?php echo "Użytkownik samodzielny?" ?> <br>
-			<label class="radio-inline"><input type="radio" name="independent" value="1" checked>Tak</label>
-			<label class="radio-inline"><input type="radio" name="independent" value="0">Nie</label>
+			<label class="radio-inline"><input type="radio" name="independent" value="1" checked><?php echo $yes; ?></label>
+			<label class="radio-inline"><input type="radio" name="independent" value="0"><?php echo $no; ?></label>
 	</div>
 	<div class="col-md-4">
 			<?php echo $lbHaslo ?> <br> <input type = "password" class="form-control" name="haslo" placeholder=" <?php echo $logHaslopch?>">
 	</div>
 	</div><br>
-	<button id="submit" type="submit" value="OK" class="btn btn-default">Zarejestruj</button>
+	<button id="submit" type="submit" value="OK" class="btn btn-default"><?php echo $commitRegister; ?></button>
 	</form>
 	<?php
 } else {
@@ -97,13 +97,13 @@ if($_GET['wybrano']==1){?>
 	?>
 
 	<div class="container">
-  	<h3>Lista użytkowników apteczki</h3>
+  	<h3><?php echo $userList; ?></h3>
   	<table class="table table-striped">
     	<thead>
       		<tr>
-        	<th>Nazwa użytkownika</th>
-        	<th>Samodzielny</th>
-        	<th>Usuń</th>
+        	<th><?php echo $lbUsername; ?></th>
+        	<th><?php echo $independentTxt; ?></th>
+        	<th><?php echo $delete; ?></th>
       		</tr>
     	</thead>
     <tbody>
@@ -112,7 +112,7 @@ if($_GET['wybrano']==1){?>
     	<td><?php echo $row["nazwa_uzytkownika"]; ?></td>
     	<td><?php echo $row["samodzielny"]; ?></td>
     	<td><form action = "" method = "post">
-    	<button type="submit" name="user_id" value="<?php echo $row["id"]; ?>" class="btn btn-primary">Usuń</button>
+    	<button type="submit" name="user_id" value="<?php echo $row["id"]; ?>" class="btn btn-primary"><?php echo $delete; ?></button>
     	</form></td>
     </tr>
     <?php }?>

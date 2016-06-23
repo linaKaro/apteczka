@@ -16,12 +16,8 @@
 	<p><?php echo $podtytul ?></p>
 </div>
 
-<?php 
-	if (!isset($_GET['wybrano'])) {
-		header("Location: myindex.php?wybrano=0&zaloguj_sie=1");
-	}?>
 	
-	<h3><?php echo "Witaj ".$_SESSION['username']."!"?></h3>
+	<h3><?php echo $welcome.$_SESSION['username']."!"?></h3>
 <?php 
 	require_once 'inc/stopka.php';
 ?>

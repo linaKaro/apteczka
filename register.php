@@ -24,13 +24,13 @@ if(isset($_POST['email']) && isset($_POST['haslo']) && isset($_POST['username'])
 	$added=$user->add_user($database_id, $_POST['username'], $independent, $_POST['haslo']);
 	if($added) {
 		?> <h4> <?php 
-		echo "Udało się utworzyć konto :) Możesz przejść do logowania."; ?></h4><br>
-		<a class="btn btn-primary" href="myindex.php?wybrano=0" role="button">Powrót do logowania</a>
+		echo $registerSuccessful; ?></h4><br>
+		<a class="btn btn-primary" href="myindex.php?wybrano=0" role="button"><?php echo $backToLogin; ?></a>
 		<?php 
 	} else {?> <h4> <?php
 		echo $registration_error; ?>
 		</h4><br>
-		<a class="btn btn-primary" href="register.php?wybrano=6" role="button">Spróbuj ponownie</a>
+		<a class="btn btn-primary" href="register.php?wybrano=6" role="button"><?php $tryAgain; ?></a>
 		<?php
 			
 	}
@@ -42,14 +42,14 @@ if(isset($_POST['email']) && isset($_POST['haslo']) && isset($_POST['username'])
 <div class="row">
   <div class="col-md-6 col-md-offset-3">	
 	<form role="form" action = "" method="POST">
-		<h3>Podaj swoje dane aby móc korzystać z apteczki:</h3>
+		<h3><?php echo $yourData; ?></h3>
 		<?php echo $lbEmail ?> <br> <input type = "email" class="form-control" name="email" placeholder=" <?php echo $logEmailpch?>" required>
 		<?php echo $lbUsername ?> <br> <input type = "text" class="form-control" name="username" placeholder = " <?php echo $logUsernamepch?>" required>
 		<?php echo $lbHaslo ?> <br> <input type = "password" class="form-control" name="haslo" placeholder=" <?php echo $logHaslopch?>" required><br>
-		<button id="submit" type="submit" value="OK" class="btn btn-default">Zarejestruj</button>
+		<button id="submit" type="submit" value="OK" class="btn btn-default"><?php echo $commitRegister; ?></button>
 	</form>
 	<br>
-	<a class="btn btn-primary" href="myindex.php?wybrano=0" role="button">Powrót do logowania</a>
+	<a class="btn btn-primary" href="myindex.php?wybrano=0" role="button"><?php echo $backToLogin; ?></a>
 	<br>
   </div>
 </div>

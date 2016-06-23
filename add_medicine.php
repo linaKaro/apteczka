@@ -18,23 +18,23 @@ if($_GET['wybrano']==1) {
 	</div>
 
 	
-	<div class="page-header">Wyszukaj lek w bazie</div>
+	<div class="page-header"><?php echo $searchBase; ?></div>
 	<form action="" method="post">
 	    <div class="row">
 	        <div class="col-md-4">
-	            <label for="search_by">Wyszukaj po:</label>
+	            <label for="search_by"><?php echo $searchBy; ?></label>
 	            <select class="form-control" id="search_by" name="search_by">
-	                <option value="nazwa_leku">nazwa</option>
-	                <option value="EAN">EAN</option>
+	                <option value="nazwa_leku"><?php echo $nameTxt; ?></option>
+	                <option value="EAN"><?php echo $eanTxt; ?></option>
 	            </select>
 	        </div>
 	        <div class="col-md-4">
-	            <label for="enter_string">Wpisz wyszukiwaną frazę:</label>
+	            <label for="enter_string"><?php echo $enterTxt; ?></label>
 	            <input class="form-control" type="text" id="enter_string" name="enter_string">
 	        </div>
 	        <div class="col-md-4">
 	            <br>
-	            <button type="submit" class="btn btn-primary">Wyszukaj</button>
+	            <button type="submit" class="btn btn-primary"><?php echo $searchTxt; ?></button>
 	        </div>
 	    </div>
 	</form>
@@ -48,16 +48,16 @@ if($_GET['wybrano']==1) {
 	?>
 	
 	<div class="container">
-	  	<h3>Lista leków</h3>
+	  	<h3><?php echo $medicineList; ?></h3>
 	  	<table class="table table-striped">
 	    	<thead>
 	      		<tr>
-	        	<th>nazwa</th>
-	        	<th>EAN</th>
-	        	<th>ilość</th>
-	        	<th>jednostka</th>
-	        	<th>substancja czynna</th>
-	        	<th>wybierz</th>
+	        	<th><?php echo $nameTxt; ?></th>
+	        	<th><?php echo $eanTxt; ?></th>
+	        	<th><?php echo $quantityTxt; ?></th>
+	        	<th><?php echo $unitTxt; ?></th>
+	        	<th><?php echo $activeSubst; ?></th>
+	        	<th><?php echo $selectTxt; ?></th>
 	      		</tr>
 	    	</thead>
 	    <tbody>
@@ -69,7 +69,7 @@ if($_GET['wybrano']==1) {
 	    	<td><?php echo $row["jednostka"]; ?></td>
 	    	<td><?php echo $row["substancja_czynna"]; ?></td>
 	    	<td><form action = "add_medicine.php?wybrano=2" method = "post">
-	    	<button type="submit" name="medicine_id" value="<?php echo $row["id"]; ?>" class="btn btn-primary">Wybierz</button>
+	    	<button type="submit" name="medicine_id" value="<?php echo $row["id"]; ?>" class="btn btn-primary"><?php echo $selectTxt; ?></button>
 	    	</form></td>
 	    </tr>
 	    <?php }?>
@@ -77,7 +77,7 @@ if($_GET['wybrano']==1) {
 	    </table><br>
 	</div>
 <?php } elseif ($_GET['wybrano']==2) {
-	$string = "brak wyboru";
+	$string = $noChoice;
 	$chosen = 0;
 	if(isset($_POST['medicine_id'])) {
 		$input=$_POST['medicine_id'];
@@ -93,22 +93,22 @@ if($_GET['wybrano']==1) {
 		<h2><?php echo $addTitle2; ?></h2>
 	</div>
 	
-	<div class="page-header">Wybrany lek</div>
+	<div class="page-header"><?php echo $chosenMedicine; ?></div>
 	<p><b><?php echo "Wybrano: ".$string ?></b></p><br>
-	<div class="page-header">Wpisz pozostałe dane dotyczące zakupionego leku</div>
+	<div class="page-header"><?php echo $otherData; ?></div>
 	
 	<div class="row">
 	  <div class="col-md-6 col-md-offset-3">	
 		<form role="form" action="add_medicine.php?wybrano=3" method="POST">
-			<label for="cena">Cena:</label>
+			<label for="cena"><?php echo $priceTxt; ?></label>
 			<input id="cena" type="number" step="0.01" class="form-control" name="cena" required>
-			<label for="data_waznosci">Data ważności:</label>
+			<label for="data_waznosci"><?php echo $usageData; ?></label>
 			<input id="data_waznosci" type="date" step="0.01" class="form-control" name="data_waznosci" required>
-			<label for="ilosc_opakowan">Ilość opakowań:</label>
+			<label for="ilosc_opakowan"><?php echo $packageNumber; ?></label>
 			<input id="ilosc_opakowan" type="number" class="form-control" name="ilosc_opakowan" required>
-			<label for="pozostalo">Pozostało:</label>
+			<label for="pozostalo"><?php echo $leftTxt; ?></label>
 			<input id="pozostalo" type="number" class="form-control" name="pozostalo" required>
-			<button name="medicine_id" type="submit" value="<?php echo $chosen; ?>" class="btn btn-primary">Dodaj</button><br>
+			<button name="medicine_id" type="submit" value="<?php echo $chosen; ?>" class="btn btn-primary"><?php echo $addBtn; ?></button><br>
 		</form>
 	   </div>
 	</div>
@@ -130,7 +130,7 @@ if($_GET['wybrano']==1) {
 		$mk = $_SESSION['mk_id'];
 		$query2 = "INSERT INTO opakowania(cena, data_waznosci, ilosc_opakowan, pozostalo, id_apteczka, id_leki) VALUES('$price', '$date', '$quantity', '$quantity2','$mk', '$medicine_id')";
 		$baza->query($query2);
-		echo "Lek dodany do apteczki<br>";
+		echo $medicineAdded;
 	}
 	
 	

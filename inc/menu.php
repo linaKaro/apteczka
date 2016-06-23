@@ -7,7 +7,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="main.php?wybrano=0"><?php echo $menuStart; ?></a>
+            <a class="navbar-brand" href="main.php"><?php echo $menuStart; ?></a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">

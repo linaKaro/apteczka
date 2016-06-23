@@ -25,11 +25,11 @@
 		header("Location: myindex.php?wybrano=0&zaloguj_sie=1");
 	}?>
 
-<div class="container theme-showcase" role="main">	
-<div class="jumbotron">
-	<h1><?php echo $tytul ?></h1>
-	<p><?php echo $podtytul ?></p>
-</div>
+	<div class="container theme-showcase" role="main">	
+	<div class="jumbotron">
+		<h1><?php echo $tytul ?></h1>
+		<p><?php echo $podtytul ?></p>
+	</div>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -44,19 +44,19 @@
 		unset($_GET['wyloguj']);
 	}
 	if ($status==true) {
-		header("Location: main.php?wybrano=0");
+		header("Location: main.php");
 	}
 	else {
 ?>	
 	<form role="form" action = "" method="POST">
-		<h3>Masz już swoją apteczkę? Zaloguj się!</h3>
+		<h3><?php echo $lgLogowanie; ?></h3>
 		<?php echo $lbEmail ?> <br> <input type = "email" class="form-control" name="email" placeholder=" <?php echo $logEmailpch?>" required>
 		<?php echo $lbUsername ?> <br> <input type = "text" class="form-control" name="username" placeholder = " <?php echo $logUsernamepch?>" required>
 		<?php echo $lbHaslo ?> <br> <input type = "password" class="form-control" name="haslo" placeholder=" <?php echo $logHaslopch?>" required><br>
 		<button id="submit" type="submit" value="OK" class="btn btn-default">Zaloguj</button> <br>
 	</form>
 	<br>
-	<h3>Jesteś tu po raz pierwszy? <a href="register.php?wybrano=6"><?php echo "ZAŁÓŻ SWOJĄ APTECZKĘ!"; ?></a></h3>
+	<h4><?php echo $register; ?> <a href="register.php"><?php echo $registerLink; ?></a></h4>
   </div>
 </div>
 <?php
