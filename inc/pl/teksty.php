@@ -30,26 +30,20 @@
 	$menuBaseSearch = "Szukaj w bazie";
 	$menuBaseAdd = "Dodaj lek";
 	$menuBaseDelete = "Usuń lek";
+	$menuInMK = "W mojej apteczce";
 	$menuMyMKAdd = "Wprowadź opakowanie";
 	$menuMyMKDelete = "Wyrzuć opakowanie";
 	$menuMyMKTake = "Weź lek";
 	$menuMyMKTaken = "Ostatnio zażywane leki";
-	
-	//wybrana opcja
-	$wybrane[0]="Logowanie";
-	$wybrane[1]="";
-	$wybrane[2]="Wyświetl leki";
-	$wybrane[3]="Dodaj do bazy";
-	$wybrane[4]="Usuń z bazy";
-	$wybrane[5]="Dokumentacja";
-	$wybrane[6]="";
 	
 	//users
 	$usersTitleAdd = "Dodawanie nowego użytkownika";
 	$usersTitleDelete = "Usuwanie użytkowników";
 	
 	//add_medicine
-	$addTitle = "Dodaj opakowanie";
+	$addTitle1 = "Dodaj opakowanie: Krok 1";
+	$addTitle2 = "Dodaj opakowanie: Krok 2";
+	$addTitle3 = "Dodawanie zakończone";
 	
 	//delete_medicine
 	$deleteTitle = "Usuń opakowanie";
@@ -61,5 +55,8 @@
 	
 	//taken_medicines
 	$takenTitle = "Historia";
+	
+	//mk_show
+	$showTitle = "Leki w apteczce";
 
 ?>
