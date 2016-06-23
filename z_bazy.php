@@ -25,18 +25,21 @@
 	
 <div class="row">
   <div class="col-md-6 col-md-offset-3">	
-<?php
-	echo "Dodaj nowy lek do bazy: <br><br>";
-?>
-<form role="form" action="" method="POST">
-<?php echo "Nazwa leku: \t"; ?><input id="text" type="text" class="form-control" name="nazwa_leku" required>
-<?php echo "EAN: \t"; ?><input id="text" type="text" class="form-control" name="ean" value="" required>
-<?php echo "Ilość w opakowaniu: \t"; ?><input id="text" type="number" class="form-control" name="ilosc" required>
-<?php echo "Jednostka: \t"; ?><input id="text" type="text" class="form-control" name="jednostka" required>
-<?php echo "Substancja czynna: \t"; ?><input id="text" type="text" class="form-control" name="substancja" required><br>
-<button id="submit" type="submit" value="Dodaj">Dodaj</button><br>
-</form>
-</div>
+	<div class="page-header">Dodaj lek:</div>
+	<form class="form" role="form" action="" method="POST">
+		<label for="nazwa_leku">Nazwa leku:</label>
+		<input id="text" type="text" class="form-control" name="nazwa_leku" required>
+		<label for="ean">EAN:</label>
+		<input id="text" type="text" class="form-control" name="ean" value="" required>
+		<label for="ilosc">Ilość w opakowaniu:</label>
+		<input id="text" type="number" class="form-control" name="ilosc" required>
+		<label for="jednostka">Jednostka:</label>
+		<input id="text" type="text" class="form-control" name="jednostka" required>
+		<label for="substancja">Substancja czynna:</label>
+		<input id="text" type="text" class="form-control" name="substancja" required><br>
+		<button id="submit" type="submit" value="Dodaj" class="btn btn-primary">Dodaj</button><br>
+	</form>
+	</div>
 </div>
 
 <?php
