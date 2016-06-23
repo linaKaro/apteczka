@@ -29,7 +29,7 @@
               <li class="dropdown">
                 <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $menuMyMK; ?><span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li><a href=""><?php echo $menuMyMKAdd; ?></a></li>	
+                  <li><a href="add_medicine.php"><?php echo $menuMyMKAdd; ?></a></li>	
                   <li><a href=""><?php echo $menuMyMKDelete; ?></a></li>
                   <li><a href=""><?php echo $menuMyMKTake; ?></a></li>
                   <li><a href=""><?php echo $menuMyMKTaken; ?></a></li>

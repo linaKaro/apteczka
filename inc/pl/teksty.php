@@ -47,5 +47,8 @@
 	//users
 	$usersTitleAdd = "Dodawanie nowego użytkownika";
 	$usersTitleDelete = "Usuwanie użytkowników";
+	
+	//add_medicine
+	$addTitle = "Dodaj opakowanie";
 
 ?>
