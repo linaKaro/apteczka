@@ -23,20 +23,23 @@
 	
 ?>
 	
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-<h3>
-<?php
-	echo "Usuń lek: <br><br>";
-?>
-</h3>
-<form role="form" action="" method="POST">
-<?php echo "Nazwa leku: \t"; ?><input id="text" type="text" class="form-control" name="nazwa_leku">
-<?php echo "EAN: \t"; ?><input id="text" type="text" class="form-control" name="ean" value=""><br>
-<button id="submit" type="submit" value="Usuń">Usuń</button>
+<div class="page-header">Usuń lek:</div>
+<form action="" method="post">
+    <div class="row">
+        <div class="col-md-4">
+            <label for="search_by">Nazwa leku:</label>
+            <input class="form-control" id="search_by" name="nazwa_leku" type="text" id="text">
+        </div>
+        <div class="col-md-4">
+            <label for="enter_string">EAN:</label>
+            <input class="form-control" type="text" id="enter_string" name="ean">
+        </div>
+        <div class="col-md-4">
+            <br>
+            <button id= "submit" type="submit" class="btn btn-primary">Usuń</button>
+        </div>
+    </div>
 </form>
-</div>
-</div>
 
 <?php
 
@@ -53,21 +56,24 @@ $wynik=$baza->query($query1);
 	
 	echo "<br><br>REKORDY W BAZIE<br><br>";
 ?>
-<table id="tabela">
-<tr id="tabela">
-<td id="tabela">
-	<?php echo "ID leku"; ?> </td>
+<div class="table-responsive">
+<table class="table" id="tabela">
+	<thead>
+	<tr id="tabela">
 	<td id="tabela">
-	<?php echo "Nazwa";?> </td>
-	<td id="tabela">
-	<?php echo "EAN";?> </td>
-	<td id="tabela">
-	<?php echo "Ilość w opakowaniu";?> </td>
-	<td id="tabela">
-	<?php echo "Jednostka";?> </td>
-	<td id="tabela">
-	<?php echo "Substancja czynna";?> </td>
+		<?php echo "ID leku"; ?> </td>
+		<td id="tabela">
+		<?php echo "Nazwa";?> </td>
+		<td id="tabela">
+		<?php echo "EAN";?> </td>
+		<td id="tabela">
+		<?php echo "Ilość w opakowaniu";?> </td>
+		<td id="tabela">
+		<?php echo "Jednostka";?> </td>
+		<td id="tabela">
+		<?php echo "Substancja czynna";?> </td>
 	</tr>
+	</thead>
 
 <?php
 	while ($row = $wynik->fetch_assoc()) {
@@ -90,6 +96,7 @@ $wynik=$baza->query($query1);
 }
 ?>
 </table>
+</div>
 
 <?php
 require_once 'inc/stopka.php';
