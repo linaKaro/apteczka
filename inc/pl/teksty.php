@@ -50,5 +50,16 @@
 	
 	//add_medicine
 	$addTitle = "Dodaj opakowanie";
+	
+	//delete_medicine
+	$deleteTitle = "Usuń opakowanie";
+	
+	//take_medicine
+	$takeTitle1 = "Weź lek: Krok 1";
+	$takeTitle2 = "Weź lek: Krok 2";
+	$takeTitle3 = "Weź lek: Zapisano";
+	
+	//taken_medicines
+	$takenTitle = "Historia";
 
 ?>

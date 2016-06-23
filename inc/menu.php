@@ -30,9 +30,9 @@
                 <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $menuMyMK; ?><span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="add_medicine.php"><?php echo $menuMyMKAdd; ?></a></li>	
-                  <li><a href=""><?php echo $menuMyMKDelete; ?></a></li>
-                  <li><a href=""><?php echo $menuMyMKTake; ?></a></li>
-                  <li><a href=""><?php echo $menuMyMKTaken; ?></a></li>
+                  <li><a href="delete_medicine.php"><?php echo $menuMyMKDelete; ?></a></li>
+                  <li><a href="take_medicine.php?wybrano=1"><?php echo $menuMyMKTake; ?></a></li>
+                  <li><a href="taken_medicines.php"><?php echo $menuMyMKTaken; ?></a></li>
                   </ul>
               </li>
               <li><a href=""><?php echo $menuStatistics; ?></a></li>
